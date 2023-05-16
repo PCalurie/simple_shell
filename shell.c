@@ -20,16 +20,6 @@ void remove_newline(char *str)
 	str[strcspn(str, "\n")] = '\0';
 }
 /**
- * execute_command - executes commands passed
- * @command: pointer to command
- */
-void execute_command(char *command)
-{
-/* TODO: Implement command execution logic */
-/* You can use the provided execmd() function or customize it to your needs */
-	execute_command(command);
-}
-/**
  * main - main function
  * @argc: argument count
  * @argv: number of arguments
