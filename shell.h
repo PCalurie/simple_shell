@@ -12,6 +12,7 @@ void execute_commands_from_file(const char *filename);
 void display_prompt(void);
 void remove_newline(char *str);
 void execute_command(char *command);
+void exitShell(int exitStatus);
 
 
 #endif /* SHELL_H */
