@@ -14,6 +14,7 @@ void remove_newline(char *str);
 void execute_command(char *command);
 void exitShell(int exitStatus);
 void handle_comments(char *command);
+int setenvShell(char *variable, char *value);
 
 
 #endif /* SHELL_H */

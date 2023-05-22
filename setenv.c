@@ -20,7 +20,7 @@ int setenvShell(char *variable, char *value)
 	}
 	else
 	{
-		printf("Environment variable '%s' set to '%s'.\n",
+		printf("Env var '%s' set to '%s'.\n", variable, value);
 	}
 
 	return (result);
