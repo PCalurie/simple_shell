@@ -20,11 +20,21 @@ void remove_newline(char *str)
 	str[strcspn(str, "\n")] = '\0';
 }
 /**
+ * exitShell - exit the shell
+ * @exitStatus: status when exiting shell
+ */
+void exitShell(int exitStatus)
+{
+	printf("exiting...%d\n", exitStatus);
+	exit(exitStatus);
+}
+/**
  * main - main function
  * @argc: argument count
  * @argv: number of arguments
  * Return: 0 for success
  */
+
 int main(int argc, char *argv[])
 {
 	char input[MAX_INPUT_LENGTH];
