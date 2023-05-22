@@ -13,7 +13,7 @@ void display_prompt(void);
 void remove_newline(char *str);
 void execute_command(char *command);
 void exitShell(int exitStatus);
-void handle_comments(char *command)
+void handle_comments(char *command);
 
 
 #endif /* SHELL_H */

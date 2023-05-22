@@ -69,6 +69,8 @@ int main(int argc, char *argv[])
 
 			if (fgets(input, sizeof(input), stdin) == NULL)
 				break;
+			
+			handle_comments(input);
 
 			remove_newline(input);
 
