@@ -38,6 +38,7 @@ void exitShell(int exitStatus)
 int main(int argc, char *argv[])
 {
 	char input[MAX_INPUT_LENGTH];
+	int exitStatus;
 
 	if (argc > 1)
 	{
@@ -70,6 +71,17 @@ int main(int argc, char *argv[])
 				break;
 
 			remove_newline(input);
+
+			if (strcmp(input, "exit") == 0)
+			{
+				printf("Exiting the shell...\n");
+				exitShell(0);
+			} else if (strncmp(input, "exit ", 5) == 0)
+			{
+				exitStatus = atoi(input + 5);
+				printf("Exiting, status: %d\n", exitStatus);
+				exit(exitStatus);
+			}
 			execute_command(input);
 		}
 	}
