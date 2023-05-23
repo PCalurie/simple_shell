@@ -58,6 +58,9 @@ int main(int argc, char *argv[])
 	char input[MAX_INPUT_LENGTH];
 	int exitStatus;
 	char *directory;
+	char *var_value = input + 7;
+	char *variable = strtok(var_value, " ");
+	char *value = strtok(NULL, " ");
 
 	if (argc > 1)
 	{
@@ -109,6 +112,22 @@ int main(int argc, char *argv[])
 				{
 					perror("cd");
 				}
+			}
+			else if (strncmp(input, "setenv ", 7) == 0)
+			{
+				if (variable != NULL && value != NULL)
+				{
+				
+					setenvShell(variable, value);
+				}
+				else
+				{
+					fprintf(stderr, "Invalid command format: setenv\n");
+				}
+			}
+			else if (strncmp(input, "unsetenv ", 9) == 0)
+			{
+				unset_env_variable(input + 9);
 			}
 			else
 			{

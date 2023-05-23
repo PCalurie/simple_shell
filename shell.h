@@ -17,6 +17,7 @@ void handle_comments(char *command);
 int setenvShell(char *variable, char *value);
 void processCommand(char *command);
 void processSubCommand(char *subCommand);
+void unset_env_variable(char *command);
 
 
 #endif /* SHELL_H */
