@@ -40,7 +40,7 @@ void processCommand(char *command)
 
 	while (token != NULL)
 	{
-		execute_command(token);
+		processSubCommand(token);
 		token = strtok(NULL, ";");
 	}
 
@@ -88,7 +88,7 @@ int main(int argc, char *argv[])
 
 			if (fgets(input, sizeof(input), stdin) == NULL)
 				break;
-			
+
 			handle_comments(input);
 
 			remove_newline(input);

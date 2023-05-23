@@ -4,6 +4,11 @@
 #include <string.h>
 #include "shell.h"
 
+/**
+ * execute_command - receive command
+ * @command: cmd argument
+ */
+
 void execute_command(char *command)
 {
 	char *args[100];
