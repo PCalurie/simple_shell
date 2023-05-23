@@ -29,6 +29,24 @@ void exitShell(int exitStatus)
 	exit(exitStatus);
 }
 /**
+ * processCommand - process command
+ * @command: command to process
+ */
+void processCommand(char *command)
+{
+	char *token;
+
+	token = strtok(command, ";");
+
+	while (token != NULL)
+	{
+		execute_command(token);
+		token = strtok(NULL, ";");
+	}
+
+}
+
+/**
  * main - main function
  * @argc: argument count
  * @argv: number of arguments
@@ -84,7 +102,10 @@ int main(int argc, char *argv[])
 				printf("Exiting, status: %d\n", exitStatus);
 				exit(exitStatus);
 			}
-			execute_command(input);
+			else
+			{
+				processCommand(input);
+			}
 		}
 	}
 
