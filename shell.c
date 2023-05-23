@@ -57,6 +57,7 @@ int main(int argc, char *argv[])
 {
 	char input[MAX_INPUT_LENGTH];
 	int exitStatus;
+	char *directory;
 
 	if (argc > 1)
 	{
@@ -101,6 +102,13 @@ int main(int argc, char *argv[])
 				exitStatus = atoi(input + 5);
 				printf("Exiting, status: %d\n", exitStatus);
 				exit(exitStatus);
+			} else if (strncmp(input, "cd ", 3) == 0)
+			{
+				directory = input + 3;
+				if (chdir(directory) != 0)
+				{
+					perror("cd");
+				}
 			}
 			else
 			{
