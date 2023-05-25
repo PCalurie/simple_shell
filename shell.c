@@ -86,7 +86,6 @@ int main(int argc, char *argv[])
 		/* Interactive mode - read commands from the user */
 		while (1)
 		{
-			display_prompt();
 
 			if (fgets(input, sizeof(input), stdin) == NULL)
 				break;
@@ -94,6 +93,8 @@ int main(int argc, char *argv[])
 			handle_comments(input);
 
 			remove_newline(input);
+
+			display_prompt();
 
 			if (strcmp(input, "exit") == 0)
 			{
