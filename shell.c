@@ -5,13 +5,6 @@
 
 #define MAX_INPUT_LENGTH 80
 /**
- * display_prompt - displays prompt on shell
- */
-void display_prompt(void)
-{
-	printf("simple_shell> ");
-}
-/**
  * remove_newline - removes new lines
  * @str: pointer to the string
  */
@@ -93,8 +86,6 @@ int main(int argc, char *argv[])
 			handle_comments(input);
 
 			remove_newline(input);
-
-			display_prompt();
 
 			if (strcmp(input, "exit") == 0)
 			{
