@@ -45,7 +45,6 @@ void processCommand(char *command)
 	}
 
 }
-
 /**
  * main - main function
  * @argc: argument count

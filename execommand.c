@@ -40,13 +40,11 @@ void execute_command(char *command)
 			perror("execvp");
 			exit(EXIT_FAILURE);
 		}
-		else
-		{
-			do {
-				waitpid(pid, &status, WUNTRACED);
-			} while (!WIFEXITED(status) && !WIFSIGNALED(status));
-		}
 	}
-
-
+	else
+	{
+		do {
+			waitpid(pid, &status, WUNTRACED);
+		} while (!WIFEXITED(status) && !WIFSIGNALED(status));
+	}
 }
